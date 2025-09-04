@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef } from "react";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
 
@@ -12,18 +12,18 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
 
-        // Extract and trim form input values
+      // Extract and trim form input values
       const name = e.target.name.value.trim();
       const email = e.target.email.value.trim();
       const message = e.target.message.value.trim();
 
-        // Validate form fields
+      // Validate form fields
       if (!name || !email || !message) {
           alert("Please fill in all the fields before submitting...");
           return;
       }
 
-        // Use emailjs to send the form data
+      // Use emailjs to send the form data
       emailjs
           .sendForm("service_ocmmdc8", "template_tpflc1x", form.current, {
               publicKey: "yG5lhYeQrk0ju3JAe", // Public key for emailjs
@@ -39,7 +39,7 @@ const Contact = () => {
               }
           );
 
-        // Reset the form after submission
+      // Reset the form after submission
       e.target.reset();
   };
 
